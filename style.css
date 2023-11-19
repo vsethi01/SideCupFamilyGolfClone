@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+*::selection{
+    background-color: #fff;
+    color:#96c11e;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body::-webkit-scrollbar{
+    display:block;
+    width:5px;
+    background-color: #95c11e;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 50px;
+}
+#nav {
+    position: fixed;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 90px;
+    align-items: center;
+    padding: 0 100px;
+    z-index: 99;
+}
+#nav1{
+    display:flex;
+    gap:45px;
+    align-items: center;
+}
+#nav2{
+    display: flex;
+    align-items: center;
+    gap:10px
+}
+#nav2 .button{
+    font-size: 1.2vw;
+    font-weight: 300;
+    border-radius: 30px;
+    background-color: #000;
+    border: 2px solid #96c11e;
+    width:fit-content
+}
+.button1{
+    /* width:60%; */
+    padding:0.7482993197278912vw 1.7vw;
+}
+.button2{
+    padding:0.7482993197278912vw 1.7vw;
+}
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #96c11e;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    background-color: #96c11e58;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9;
+    filter: blur(80px);
+}
+
+#nav img {
+    height: 4.1vw;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+    /* Didn't give main div height and width to apply locomotive js easily */
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 #arrow{
+    height:200px;
+    width:200px;
+    /* background-color: red; */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -2%;
+    bottom: 1%;
+    border: 2px solid #96c11e;
+    transition: all ease 0.5s;
+    /* background-color: "transparent"; */
+}
+#page1 #arrow i{
+    font-size: 50px;
+    font-weight: 100;
+}
+#page1 #arrow:hover {
+    height: 60px; /* Adjust the smaller size as needed */
+    width: 60px;  /* Adjust the smaller size as needed */
+    background-color: #96c11e;
+    left:2%;
+    bottom:5%
+}
+#page1 #arrow:hover i {
+    font-size: 50x; /* Keep the font size constant on hover */
+}
+#page1 h1 {
+    font-size: 7vw;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    position: absolute;
+    content: "EAT. DRINK. PLAY.";
+    color: #000;
+    top: -5px;
+    left: -5.5px;
+    z-index: -1;
+    -webkit-text-stroke: 2px #96c11e;
+}
+
+#page1 h2 {
+    font-size: 21px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+#page1 p {
+    font-size: 1.1vw;
+    font-weight: 300;
+    width: 40%;
+    line-height: 20px;
+}
+
+#page2 {
+    /* given min-height instead of height as our cards were were overflowing page soto prevent i gave minimum is 100vh maximum can be anything */
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    /* background-color: aliceblue; */
+    overflow: hidden;
+    position: relative;
+    z-index: 98;
+}
+#scroller h4 {
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 900;
+    font-family: 'Gilroy';
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color: #000;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+#page2 #scroller #scroller-in h4:hover {
+    color: #96c11e; /* Change to the color you want on hover */
+    -webkit-text-stroke: 2px #96c11e; /* Change to the stroke color you want on hover */
+}
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+#page2h{
+    height:50vh;
+    background-color: red;
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+}
+.card{
+    height:80%;
+    width:20%;
+    background-color: blue;
+
+}
+#aboutus{
+    margin-top: 60px;
+    height:40vh;
+    width:100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+    z-index: 10;
+}
+#aboutus img{
+/* height: 14.97vw;
+  width: 14.97vw; */
+  border-radius: 7px;
+  object-fit: cover;
+}
+.aboutus1{
+    height:10.9vw;
+    width:10.9vw;
+}
+.aboutus2{
+    height:14.97vw;
+    width:10.2vw;
+}
+#aboutus-in{
+    width:50%;
+    text-align: center;
+}
+#aboutus-in h3{
+    font-size: 2.45vw;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#aboutus-in .first{
+    font-size: 1.22vw;
+    margin-bottom: 20px;
+    line-height: 26px;
+}
+#aboutus-in .second{
+    font-size: 1.16vw;
+    margin-bottom: 20px;
+    line-height: 26px;
+}
+
+#cards-container{
+    height:60vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+#cards-container img{
+    position: absolute;
+    top:5px;
+    left:60px;
+    z-index:-1;
+}
+.cards{
+    position: relative;
+    height:82%;
+    width:24%;
+    /* background-color: blue; */
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    height:100%;
+    width:100%;
+    background-color: #96c11e;
+    padding-left:30px;
+    padding-right: 30px;
+    padding-top: 160px;
+    opacity:0;
+    position: absolute;
+    z-index:20 ;
+    transition: all ease 0.6s;
+}
+.overlay h4{
+    color:#000;
+    font-size:1.632vw;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.overlay p{
+    color:#000;
+    font-size: 1.09vw;
+}
+.cards:hover .overlay{
+    opacity: 1;
+}
+.cards:hover{
+    -webkit-transform: rotate3d(-1,1,0,20deg);
+    transform: rotate3d(-1,1,0,20deg);
+}
+#greendiv{
+    height: 30vh;
+    display:flex;
+    background-image:linear-gradient(to left bottom,#ade022,#22a03a);
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+#greendiv h4{
+    width:40%;
+    text-transform: uppercase;
+    font-size: 1.43vw;
+    text-align: center;
+    color:#000;
+    font-weight: 800;
+    line-height: 40px;
+    position: relative;
+    z-index: 10;
+}
+#greendiv img{
+    height:100%;
+    object-fit: cover;
+    width: 12%;
+}
+#page3{
+    min-height: 100vh;
+}
+#page3-1{
+    height:100vh;
+    width:100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3-1 p{
+    font-size: 1.43vw;
+    font-weight: 800;
+    line-height: 35px;
+    text-align: center;
+    width:55%;
+    text-transform: uppercase;
+}
+#page3 img{
+    position: absolute;
+    height: 3.4vw;
+}
+#page3 #colon1{
+    top:30%;
+    left: 15%;
+}
+#page3 #colon2{
+    bottom:30%;
+    right: 15%;
+}
+
+#page4{
+    height:30vh;
+    width:100%;
+    /* background-color: red; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    position: relative;
+}
+#page4 .elem{
+    height: 65%;
+    width:25%;
+    overflow: hidden;
+    border-radius: 13px;
+    position:relative;
+}
+.elem h2{
+    height:100%;
+    width:100%;
+    background-color: #96c11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800 ;
+    color:#000;
+    transition: all ease 0.5s;
+    position: absolute;
+    z-index: 10;
+}
+.elem img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    scale:1.1;
+    transition: all ease 0.5s;
+}
+.elem:hover h2{
+    color:#ffffff;
+    background-color: transparent;
+}
+.elem:hover img{
+   scale:1;
+}
+#page4>h2{
+    position: absolute;
+    font-size: 5.646vw;
+    top:-8.5%;
+    -webkit-text-stroke: 2px #ffffff;
+    color:#000;
+    font-family: 'Gilroy';
+    font-weight: 900;
+}
+#footer{
+    position: relative;
+    min-height:40vh;
+    background:linear-gradient(to left bottom,#119f3a,#ace022);
+}
+#footer>img{
+    position: absolute;
+    top:0px;
+    left: -14px;
+    z-index: 10;
+}
+#footer-main{
+    min-height:40vh;
+    margin-top: 50px;
+    width:100%;
+    padding-top: 70px;
+    display: flex;
+    gap:120px;
+    position: relative;
+    padding-left: 150px ;
+    padding-right: 150px;
+    /* overflow: hidden; */
+}
+#footer1{
+    /* padding:100px 150px; */
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap:40px;
+    position: relative;
+    z-index: 11;
+
+}
+#icons{
+    display: flex;
+    gap:4px
+}
+#footer .f h3{
+    font-size: 1.43vw;
+    line-height: 40px;
+    font-weight: 900;
+    color:#000;
+    position: relative;
+    z-index: 10;
+}
+#footer4{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+#footer4 h3{
+    color:#000;
+    font-weight: 900;
+    position: relative;
+    z-index: 10;
+}
+#f4text p{
+    color:#000;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 8.843vw;
+    padding-bottom: 2.72vw;
+}
+#c1{
+    display: flex;
+    gap:5px;
+}
+#c1 p{
+    color:#000;
+    font-size: 0.884vw;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+#c2 p{
+    color:#000;
+    font-size: 0.884vw;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
